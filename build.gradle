@@ -1,0 +1,64 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.0'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.example.full.springboot.tutorial'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	//implementation 'org.mockito:mockito-all:1.10.19'
+	implementation 'org.testng:testng:7.6.0'
+	implementation 'junit:junit:4.13.2'
+	implementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+	implementation 'org.assertj:assertj-core:3.23.1'
+	implementation 'com.novocode:junit-interface:0.11'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'com.h2database:h2'
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'mysql:mysql-connector-java'
+	// https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api
+	implementation 'javax.persistence:javax.persistence-api:2.2'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
+	implementation 'org.springframework.boot:spring-boot-starter-validation:2.7.0'
+
+	annotationProcessor 'org.projectlombok:lombok'
+	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+	implementation 'mysql:mysql-connector-java:8.0.29'
+
+	implementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+	implementation 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'junit', module: 'junit'
+	}
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+	implementation 'org.junit.jupiter:junit-jupiter-params:5.8.2'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+
+
+	// https://mvnrepository.com/artifact/org.mockito/mockito-core
+	//testImplementation 'org.mockito:mockito-core:4.6.1'
+
+	// https://mvnrepository.com/artifact/org.mockito/mockito-all
+	//testImplementation 'org.mockito:mockito-all:2.0.2-beta'
+	// https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter
+	//testImplementation 'org.mockito:mockito-junit-jupiter:4.6.1'
+
+
+
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
